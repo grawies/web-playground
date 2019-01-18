@@ -1,26 +1,128 @@
 <!doctype html>
 <html>
 <head>
+<style>
+ul, h3 {
+  color: blue;
+  font-size: 10px;
+}
+.myclassname {
+  font-size:30px;
+  font-style: italic;
+  opacity: .6;
+}
+#myid {
+  color: red;
+}
+.centered_grey {
+  text-align: center;
+  background-color: grey;
+}
+
+/* selector.class */
+h2.fat { /* all 'h2' with class 'fat' */
+  background-color: black;
+}
+/* child combinator */
+div > span { /* all 'a' which are _direct_ child of a 'p' element. */
+  opacity: 0.3;
+  background-color: pink;
+}
+/* descendant selector */
+div span { /* all content which is in both a 'span' and a 'p'. */
+  font-style: italic;
+  font-family: "Courier New", monospace;
+}
+.centered_grey.myclassname {
+  font-weight: bold;
+}
+/*
+There are also:
+  adjacent sibling conbinators (selector + selector)
+  general sibling combinators (selector ~ selector)
+*/
+
+/* pseudo-class selector:
+selector:pseudo-class {
+ ..
+}
+
+pseudo-class is predefined.
+link, visited, hover, active, nth-child(..)
+*/
+a:visited {
+  color: red;
+}
+a:hover {
+  color: green;
+}
+
+#menu {
+  text-align: center;
+  font-size: 15px;
+  width: 300px;
+}
+
+.menuitem:link, .menuitem:visited {
+  text-decoration:none;
+  background-color: black;
+  color: white;
+}
+
+.menuitem {
+  text-decoration: none;
+  text-align: center;
+  font-size: 25px;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-bottom: 1px;
+  display: block;
+}
+
+.menuitem:hover, .menuitem:active {
+  background-color: grey;
+}
+
+
+ul > li:nth-child(2) {
+  font-size: 24px;
+}
+
+ol > li:nth-child(odd) {
+  background-color: pink;
+}
+</style>
   <meta charset="utf-8">
   <title>Ridiculous Title</title>
 </head>
 <body>
-<header>bringing the web to the web since 2019 </header>
+<header>bringing the web to the web since 2019</header>
 <h1 id="top">Merry Christmas</h1>
-<h2>...and a hyperlink new year!</h2>
-This text is so <a href="https://grawies.github.io/web-playground/site/" title="online version on github.io" target="_blank">hyper</a> it's not even funny. It is an external link.
+<div id="menu">
+<h2 style="border: 1px solid blue;">Menu</h2>
+<a class="menuitem" href="/">Home</a>
+<a class="menuitem" href="#end">End</a>
+<a class="menuitem" href="https://www.ruv.is/">News Site</a>
+</div>
+<h2 id="myid" class="fat">...and a hyperlink new year!</h2>
+<div>
+This <span>text</span> is so <a href="https://grawies.github.io/web-playground/site/" title="online version on github.io" target="_blank">hyper</a> it's not even funny. It is an external link.
 Hey - also check out this internal link to another page on this site:
-<a href="foo.html" title="a placeholder on this site">
-flipped out link
-</a>
+<p> <span>a</span>
+  <a href="foo.html" title="a placeholder on this site">
+  flipped out link
+  </a>
+  which <span>leads</span> to &quot;foo&quot;.
+</p>
+</div>
 Finally, <a href="#end" title="the end">this</a> links to the end of the document. It is a fragment identifier down there, #end.
-<h2>Lists, ordered and unordered</h2>
+<h2 class="centered_grey">Lists, ordered and unordered</h2>
 <ul>
  <li>Mathematics</li>
  <li>Psychology</li>
  <li>Biology</li>
  <li>Economics
-   <ul>
+   <ul style="color:green;">
      <li>Microeconomics</li>
      <li>Macroeconomics</li>
    </ul>
@@ -38,7 +140,7 @@ remember that it's not all about studying...
  <li>do things that make you happy</li>
  <li>stay physically active</li>
  <li>meet friends
-  <ul>
+  <ul class="myclassname">
    <li>friend one</li>
    <li>friend two</li>
    <li>friend three</li>
@@ -52,6 +154,7 @@ Basically anything with an &amp; - ampersand.
 They can safeguard against more limited character encoding, help avoid rendering issues, and they provide characters not available on a keyboard.
 Don't be afraid to be &lt; than a 100 % success &amp; &gt; more!
 <h2>...and a Happy New Year!</h2>
+<span class="myclassname">Here <span class="centered_grey">you have</span></span> a word.
 <h3>...and a Happy New Year!</h3>
 <h4>...and a Happy New Year!</h4>
 <h5>...and a Happy New Year!</h5>
