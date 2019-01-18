@@ -1,0 +1,114 @@
+ul, h3 {
+  color: blue;
+  font-size: 10px;
+}
+h6 {
+  text-transform: uppercase;
+}
+.myclassname {
+  font-size:30px;
+  font-style: italic;
+  opacity: .6;
+}
+#myid {
+  color: red;
+}
+.centered_grey {
+  text-align: center;
+  background-color: grey;
+}
+
+/* selector.class */
+h2.fat { /* all 'h2' with class 'fat' */
+  background-color: black;
+}
+/* child combinator */
+div > span { /* all 'a' which are _direct_ child of a 'p' element. */
+  opacity: 0.3;
+  background-color: pink;
+}
+/* descendant selector */
+div span { /* all content which is in both a 'span' and a 'p'. */
+  font-style: italic;
+  font-family: "Courier New", monospace;
+}
+.centered_grey.myclassname {
+  font-weight: bold;
+}
+/*
+There are also:
+  adjacent sibling conbinators (selector + selector)
+  general sibling combinators (selector ~ selector)
+*/
+
+/* pseudo-class selector:
+selector:pseudo-class {
+ ..
+}
+
+pseudo-class is predefined.
+link, visited, hover, active, nth-child(..)
+*/
+a:visited {
+  color: red;
+}
+a:hover {
+  color: green;
+}
+
+#menu {
+  text-align: center;
+  font-size: 15px;
+  width: 300px;
+}
+
+.menuitem:link, .menuitem:visited {
+  text-decoration:none;
+  background-color: black;
+  color: white;
+}
+
+.menuitem {
+  text-decoration: none;
+  text-align: center;
+  font-size: 25px;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-bottom: 1px;
+  display: block;
+}
+
+.menuitem:hover, .menuitem:active {
+  background-color: grey;
+}
+
+
+ul > li:nth-child(2) {
+  font-size: 24px;
+}
+
+ol > li:nth-child(odd) {
+  background-color: pink;
+}
+
+.informational_header {
+  color: #000000;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.informational li {
+  color: black;
+  background-color: white !important; /* otherwise the 'ol>li' rule above will take precedence. */
+  /* Pixels are considered absolute units of measurement. But on higher-resolution devices, this pixel unit actually maps to several pixels on the device screen, i.e. sharper text. So this 16 px font will not be super tiny on an ultra-high res screen.*/
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+#percent {
+  font-size: 200%;
+}
+
+#em {
+  font-size: 2em;
+}
