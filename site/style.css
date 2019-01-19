@@ -110,5 +110,102 @@ ol > li:nth-child(odd) {
 }
 
 #em {
+  /* specified in terms of the width of an 'm'. */
   font-size: 2em;
 }
+
+/* reset default spacing, to more clearly see our changes. */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#outer_box {
+  text-align: center;
+  background-color: red;
+      /*   top right bot  left */
+  padding: 10px 10px 10px 10px;
+  /* could also have been one value, to set all to same. */
+  border: 5px dashed black;
+  margin: 7px;
+  /* this is by default just the content width.
+     Add border, margin, padding to get actual size. */
+  width: 400px; 
+  height: 100px;
+  overflow: auto;
+  /* default: visible (overflow),
+     hidden (cut off),
+     auto (scrollbars as neded),
+     scroll (always scrollbars).
+  */
+}
+
+* {
+  /* this fixes the element width: all frameworks use this as the sizing model. go with this.
+     But! We can't set it on body{}, because it is a property that _is_ _not_ _inherited_!
+     We must use the star selector. Use it whenever you're resetting CSS.
+  */
+  box-sizing: border-box;
+  /* It is new in css3. */
+}
+
+#other_box {
+  background-color: lightblue;
+  margin: 40px;
+  /* vertical margin is not cumulative.
+     the space between outer_box and other_box will be 40px: max(7, 40).
+  */
+}
+
+#inner_box {
+  background-color: pink;
+}
+
+#my_bg {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+  background-image: url("http://i.imgur.com/CU9Hd.jpg");
+  background-repeat: no-repeat;
+  background-position: 10px 20px;
+  background-size: cover;
+  /* Alternative: can specify everything on one line.
+  background: url(..) no-repeat right center;
+  this overrides every previous background property.
+  */
+}
+
+#floaty {
+  background-color: lightgrey;
+}
+
+#floaty > p {
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+}
+
+#p1 {
+  background-color: #A1A125;
+  /* floats are taken out of normal document flow.*/
+  float: left;
+}
+#p2 {
+  background-color: #00FFFF;
+  height: 200px;
+  float: right;
+  /* note: margin never collapses on floating elements. */
+}
+#p3 {
+  background-color: #AA2255;
+  clear: both; /* or left/right */
+}
+#p4 {
+  background-color: #AAFFAA;
+}
+section {
+  /* Disallow any floating to the left of this. */
+  clear: left:
+}
+
