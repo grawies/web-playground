@@ -130,7 +130,7 @@ body {
   margin: 7px;
   /* this is by default just the content width.
      Add border, margin, padding to get actual size. */
-  width: 400px; 
+  width: 400px;
   height: 100px;
   overflow: auto;
   /* default: visible (overflow),
@@ -187,25 +187,69 @@ body {
 }
 
 #p1 {
-  background-color: #A1A125;
+  background-color: #A1A125; /* gold */
   /* floats are taken out of normal document flow.*/
-  float: left;
 }
 #p2 {
-  background-color: #00FFFF;
+  background-color: #00FFFF; /* blue */
   height: 200px;
   float: right;
   /* note: margin never collapses on floating elements. */
 }
 #p3 {
-  background-color: #AA2255;
-  clear: both; /* or left/right */
+  background-color: #AA2255; /* red */
+  float: left;
 }
 #p4 {
-  background-color: #AAFFAA;
+  background-color: #AAFFAA; /* green */
 }
+
 section {
   /* Disallow any floating to the left of this. */
-  clear: left:
+  clear: both; /* or left/right */
 }
+
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+#halfpage_container {
+  background-color: lightgrey;
+}
+
+.halfpage {
+  float: left;
+  background-color: lightgrey;
+  box-sizing: border-box;
+  width: 50%;
+  padding: 15px;
+  text-align: justify;
+  font-family: sans-serif;
+}
+
+#hanging_blob {
+  /* all elements are static position by default, except html (relative). */
+  /* relative position offsets the element relative to its normal document flow position. */
+  /* absolute position is relative to closest non-static ancestor. this takes it out of the doc flow.*/
+  position: fixed;
+  top: 10px;
+  right: 5px;
+  padding: 5px;
+  border: 1px solid black;
+  background-color: yellow;
+  text-decoration: none;
+}
+
+#hanging_blob:link, #hanging_blob:visited {
+  color: black;
+}
+
+#hanging_blob:hover, #hanging_blob:active {
+  background-color: gold;
+}
+
 
