@@ -58,8 +58,28 @@ a:hover {
 
 #menu {
   text-align: center;
-  font-size: 15px;
-  width: 300px;
+}
+
+@media screen and (max-width: 800px) {
+  #menu {
+    font-size: 40px;
+    width: 100%;
+  }
+  .menuitem {
+    font-size: 40px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  #menu {
+    font-size: 15px;
+    width: 300px;
+  }
+  .menuitem {
+    font-size: 25px;
+    width: 300px;
+  }
 }
 
 .menuitem:link, .menuitem:visited {
@@ -71,7 +91,6 @@ a:hover {
 .menuitem {
   text-decoration: none;
   text-align: center;
-  font-size: 25px;
   font-family: sans-serif;
   font-weight: bold;
   margin-bottom: 1px;
@@ -130,7 +149,7 @@ body {
   margin: 7px;
   /* this is by default just the content width.
      Add border, margin, padding to get actual size. */
-  width: 400px;
+  width: 300px;
   height: 100px;
   overflow: auto;
   /* default: visible (overflow),
@@ -251,5 +270,3 @@ section {
 #hanging_blob:hover, #hanging_blob:active {
   background-color: gold;
 }
-
-
